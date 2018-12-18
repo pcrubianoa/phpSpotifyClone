@@ -17,22 +17,6 @@
         return $inputText;
     }
 
-    function validateUsername($un){
-
-    }
-    function validateFirstname($fn){
-
-    }
-    function validateLastname($ln){
-
-    }
-    function validateEmails($em, $em2){
-
-    }
-    function validatePasswords($pw, $pw2){
-
-    }
-
     if (isset($_POST['registerButton'])) {
         $username = sanitizeFormUsername($_POST['username']);
         $firstName = sanitizeFormString($_POST['firstname']);
@@ -42,13 +26,6 @@
         $emailConfirm = sanitizeFormString($_POST['emailConfirm']);
         $password = sanitizeFormPassword($_POST['password']);
         $passwordConfirm = sanitizeFormPassword($_POST['passwordConfirm']);
-
-        validateUsername($username);
-        validateFirstname($firstName);
-        validateLastname($firstName);
-        validateEmail($email, $emailConfirm);
-        validatePasswords($password, $passwordConfirm);
-
     }
 
 ?>
