@@ -20,7 +20,7 @@
     if (isset($_POST['registerButton'])) {
         $username = sanitizeFormUsername($_POST['username']);
         $firstName = sanitizeFormString($_POST['firstname']);
-        $lastName = sanitizeFormString($_POST['lastname']);
+        $lastName = sanitizeFormString($_POST['lastName']);
         $firstName = sanitizeFormString($_POST['firstname']);
         $email = sanitizeFormString($_POST['email']);
         $emailConfirm = sanitizeFormString($_POST['emailConfirm']);

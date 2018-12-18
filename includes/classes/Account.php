@@ -31,21 +31,21 @@
 
         private function validateUsername($un){
             if (strlen($un) > 25 || strlen($un) < 5) {
-                array_push($this->errorArray, Constants::$usernameCharacter);
+                array_push($this->errorArray, Constants::$usernameCharacters);
                 return;
             }
         }
 
         private function validateFirstName($fn){
             if (strlen($fn) > 25 || strlen($fn) < 2) {
-                array_push($this->errorArray, Constants::$firstNameCharacter);
+                array_push($this->errorArray, Constants::$firstNameCharacters);
                 return;
             }
         }
 
         private function validateLastName($ln){
             if (strlen($ln) > 25 || strlen($ln) < 2) {
-                array_push($this->errorArray, Constants::$lastNameCharacter);
+                array_push($this->errorArray, Constants::$lastNameCharacters);
                 return;
             }
         }
