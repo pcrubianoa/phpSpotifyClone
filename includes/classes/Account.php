@@ -12,7 +12,7 @@
             $this->validateUsername($un);
             $this->validateFirstname($fn);
             $this->validateLastname($ln);
-            $this->validateEmail($em, $em2);
+            $this->validateEmails($em, $em2);
             $this->validatePasswords($pw, $pw2);
         }
 
@@ -22,20 +22,34 @@
                 return;
             }
         }
-    
-        private function validateFirstname($fn){
-    
+
+        private function validateFirstName($fn){
+            if (strlen($fn) > 25 || strlen($fn) < 2) {
+                array_push($this->errorArray, "Your first name must be between 2 and 25 characters");
+                return;
+            }
         }
-    
-        private function validateLastname($ln){
-    
-        }
-    
-        private function validateEmails($em, $em2){
-    
+
+        private function validateLastName($ln){
+            if (strlen($ln) > 25 || strlen($ln) < 2) {
+                array_push($this->errorArray, "Your last name must be between 2 and 25 characters");
+                return;
+            }
         }
         
-        private unction validatePasswords($pw, $pw2){
+        private function validateEmails($em, $em2){
+            if ($em != $em2) {
+                array_push($this->errorArray, "Your emails don´t match");
+                return;
+            }
+
+            if(!filter_var($em, FILTER_VALIDATE_EMAIL)){
+                array_push($this->errorArray, "Email is invalid");
+            }
+        }
+
+              
+        private function validatePasswords($pw, $pw2){
     
         }
         
