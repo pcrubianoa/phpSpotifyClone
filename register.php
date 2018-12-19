@@ -22,6 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/register.js"></script>
     <title>Welcome to Spotify Clone</title>
 </head>
 <body>
@@ -40,6 +42,10 @@
                         <input type="password" id="loginPassword" name="loginPassword" placeholder="Your password" required>
                     </p>
                     <button type="submit" name="loginButton">Login</button>
+
+					<div class="hasAccountText">
+						<span id="hideLogin">Don't have an account yet? Signup here.</span>
+					</div>
                 </form>
 
                 <form id="registerForm" action="register.php" method="POST">
@@ -83,6 +89,10 @@
                         <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm password" required>
                     </p>
                     <button type="submit" name="registerButton">Sign Up</button>
+
+					<div class="hasAccountText">
+						<span id="hideRegister">Already have an account? Log in here.</span>
+					</div>
                 </form>
             </div>
         </div>
