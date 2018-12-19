@@ -5,10 +5,13 @@
         $password = $_POST['loginPassword'];
         
         $result = $account->login($username, $password);
-
+        
         if($result == true){
+            print("es true");
+            $_SESSION['userLoggedIn'] = $username;
             header("Location: index.php");
         }
+        
     }
 
 ?>
