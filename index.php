@@ -25,7 +25,17 @@ if(isset($_SESSION['userLoggedIn'])){
             <div id="nowPlayingLeft">
                 <div class="content">
                     <div class="albumLink">
-                    <img src="https://pbs.twimg.com/profile_images/905183271046193153/q_P1KBUJ_400x400.jpg" alt="" class="albumArtwork"></div>
+                    <span class="trackName">
+                        <img src="https://pbs.twimg.com/profile_images/905183271046193153/q_P1KBUJ_400x400.jpg" alt="" class="albumArtwork"></div>
+                    </span>
+                    <div class="trackInfo">
+                        <span class="trackName">
+                            <span>The number of the beast</span>
+                        </span>
+                        <span class="artistName">
+                            <span>Iron Maiden</span>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="content playerControls">
