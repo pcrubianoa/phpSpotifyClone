@@ -54,11 +54,11 @@
                     <p>
                         <?php echo $account->getError(Constants::$loginFailed); ?>
                         <label for="loginUsername">Username</label>
-                        <input type="text" id="loginUsername" name="loginUsername" placeholder="Your username" required>
+                        <input type="text" id="loginUsername" name="loginUsername" placeholder="Your username" value="<?php getInputValue('loginUsername') ?>" required>
                     </p>
                     <p>
                         <label for="loginUsername">Password</label>
-                        <input type="password" id="loginPassword" name="loginPassword" placeholder="Your password" required>
+                        <input type="password" id="loginPassword" name="loginPassword" placeholder="Your password" value="<?php getInputValue('loginPassword') ?>" required>
                     </p>
                     <button type="submit" name="loginButton">Login</button>
 
