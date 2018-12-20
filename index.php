@@ -23,6 +23,10 @@ if(isset($_SESSION['userLoggedIn'])){
     <div id="nowPlayingBarContainer">
         <div id="nowPlayingBar">
             <div id="nowPlayingLeft">
+                <div class="content">
+                    <div class="albumLink">
+                    <img src="https://pbs.twimg.com/profile_images/905183271046193153/q_P1KBUJ_400x400.jpg" alt="" class="albumArtwork"></div>
+                </div>
             </div>
             <div class="content playerControls">
                 <div class="buttons">
