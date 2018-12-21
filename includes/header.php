@@ -27,9 +27,7 @@ if(isset($_SESSION['userLoggedIn'])){
 <body>
 
     <script>
-        var audioElement = new Audio();
-        audioElement.setTrack("assets/music/the-four-horsemen.mp3");
-        audioElement.audio.play();
+
     </script>
 
     <div id="mainContainer">

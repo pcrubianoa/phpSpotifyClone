@@ -8,7 +8,19 @@
 ?>
 
 <script>
-console.log(<?php echo $jsonArray; ?>);
+    $(document).ready(function(){
+        currentPlaylist = <?php echo $jsonArray; ?>;
+        audioElement = new Audio();
+        setTrack(currentPlaylist[0], currentPlaylist, true);
+    });
+
+    function setTrack(trackId, newPlaylist, play){
+        audioElement.setTrack("assets/music/the-four-horsemen.mp3");
+
+        if(play == true){
+            audioElement.play();
+        }
+    }
 </script>
 
 <div id="nowPlayingBarContainer">
