@@ -20,9 +20,16 @@ if(isset($_SESSION['userLoggedIn'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
     <title>Welcome to SpotifyClone</title>
 </head>
 <body>
+
+    <script>
+        var audioElement = new Audio();
+        audioElement.setTrack("assets/music/the-four-horsemen.mp3");
+        audioElement.audio.play();
+    </script>
 
     <div id="mainContainer">
         <div id="topContainer">
