@@ -8,10 +8,11 @@
 ?>
 
 <script>
+
     $(document).ready(function(){
         currentPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
-        setTrack(currentPlaylist[0], currentPlaylist, true);
+        setTrack(currentPlaylist[0], currentPlaylist, false);
     });
 
     function setTrack(trackId, newPlaylist, play){
@@ -21,6 +22,19 @@
             audioElement.play();
         }
     }
+
+    function playSong(){
+        $(".controlButton.play").hide();
+        $(".controlButton.pause").show();
+        audioElement.play();
+}
+
+    function pauseSong(){
+        $(".controlButton.play").show();
+	    $(".controlButton.pause").hide();
+        audioElement.pause();
+    }
+
 </script>
 
 <div id="nowPlayingBarContainer">
@@ -49,10 +63,10 @@
                 <button class="controlButton previous" title="Previous button">
                     <img src="assets/images/icons/previous.png" alt="Shuffle">
                 </button>
-                <button class="controlButton play" title="Play button">
+                <button class="controlButton play" title="Play button" onclick="playSong()">
                     <img src="assets/images/icons/play.png" alt="Shuffle">
                 </button>
-                <button class="controlButton pause" title="Pause button" style="display: none;">
+                <button class="controlButton pause" title="Pause button" style="display: none;" onclick="pauseSong()">
                     <img src="assets/images/icons/pause.png" alt="Pause">
                 </button>
                 <button class="controlButton next" title="Next button">
