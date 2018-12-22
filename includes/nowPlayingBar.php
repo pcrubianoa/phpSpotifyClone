@@ -16,7 +16,27 @@
     });
 
     function setTrack(trackId, newPlaylist, play){
-        audioElement.setTrack("assets/music/the-four-horsemen.mp3");
+        
+        $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
+            
+            var track = JSON.parse(data);
+
+            $(".trackName span").text(track.title);
+
+            $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data){
+                var artist = JSON.parse(data);
+                $(".artistName span").text(artist.name);
+            });
+
+            $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data){
+                var album = JSON.parse(data);
+                $(".albumLink img").attr("src", album.artworkPath);
+            });
+
+            console.log(track);
+            audioElement.setTrack(track.path);
+            audioElement.play();
+        });
 
         if(play == true){
             audioElement.play();
@@ -47,10 +67,10 @@
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span>The number of the beast</span>
+                        <span></span>
                     </span>
                     <span class="artistName">
-                        <span>Iron Maiden</span>
+                        <span></span>
                     </span>
                 </div>
             </div>
