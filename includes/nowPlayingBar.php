@@ -85,11 +85,17 @@
         setTrack(trackToPlay, currentPlaylist, true);
     }
 
+    function setRepeat(){
+        repeat = !repeat;
+        var imageName = repeat ? "repeat-active.png" : "repeat.png";
+        $(".controlButton.repeat img").attr("src", "assets/images/icons/" + imageName);
+    }
+
     function setTrack(trackId, newPlaylist, play){
         
         curretIndex = currentPlaylist.indexOf(trackId); 
         pauseSong();
-        
+
         $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
 
             var track = JSON.parse(data);
@@ -169,7 +175,7 @@
                 <button class="controlButton next" title="Next button" onclick="nextSong()">
                     <img src="assets/images/icons/next.png" alt="Shuffle">
                 </button>
-                <button class="controlButton repeat" title="Repeat button">
+                <button class="controlButton repeat" title="Repeat button" onclick="setRepeat()">
                     <img src="assets/images/icons/repeat.png" alt="Shuffle">
                 </button>
             </div>
