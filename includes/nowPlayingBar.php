@@ -13,7 +13,54 @@
         currentPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
         setTrack(currentPlaylist[0], currentPlaylist, false);
+
+        $(".playbackBar .progressBar").mousedown(function() {
+		mouseDown = true;
+        });
+
+        $(".playbackBar .progressBar").mousemove(function(e) {
+            if(mouseDown == true) {
+                //Set time of song, depending on position of mouse
+                timeFromOffset(e, this);
+            }
+        });
+
+        $(".playbackBar .progressBar").mouseup(function(e) {
+            timeFromOffset(e, this);
+        });
+
+        $(".volumeBar .progressBar").mousedown(function() {
+		mouseDown = true;
+        });
+
+        $(".volumeBar .progressBar").mousemove(function(e) {
+            if(mouseDown == true) {
+
+                var porcentage = e.offsetX / $(this).width();
+
+                if(porcentage >= 0 && porcentage <= 1){
+                    audioElement.audio.volume = porcentage;
+                }
+            }
+        });
+
+        $(".volumeBar .progressBar").mouseup(function(e) {
+            var porcentage = e.offsetX / $(this).width();
+            if(porcentage >= 0 && porcentage <= 1){
+                audioElement.audio.volume = porcentage;
+            }
+        });
+
+        $(document).mouseup(function() {
+            mouseDown = false;
+        });
     });
+
+    function timeFromOffset(mouse, progressBar) {
+        var percentage = mouse.offsetX / $(progressBar).width() * 100;
+        var seconds = audioElement.audio.duration * (percentage / 100);
+        audioElement.setTime(seconds);
+    }
 
     function setTrack(trackId, newPlaylist, play){
         
