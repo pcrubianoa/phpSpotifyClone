@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `genre` int(11) NOT NULL DEFAULT '0',
   `artworkPath` varchar(500) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table spotifyclone.artists
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table spotifyclone.genres
@@ -43,6 +43,28 @@ DROP TABLE IF EXISTS `genres`;
 CREATE TABLE IF NOT EXISTS `genres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+-- Dumping structure for table spotifyclone.playlist
+DROP TABLE IF EXISTS `playlist`;
+CREATE TABLE IF NOT EXISTS `playlist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '0',
+  `owner` varchar(50) NOT NULL DEFAULT '0',
+  `dateCreated` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+-- Dumping structure for table spotifyclone.playlistsongs
+DROP TABLE IF EXISTS `playlistsongs`;
+CREATE TABLE IF NOT EXISTS `playlistsongs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sondId` int(11) NOT NULL DEFAULT '0',
+  `playlistId` int(11) NOT NULL DEFAULT '0',
+  `playlistOrder` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -60,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `songs` (
   `albumOrder` int(11) NOT NULL DEFAULT '0',
   `plays` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 -- Dumping structure for table spotifyclone.users
