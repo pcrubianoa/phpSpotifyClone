@@ -8,4 +8,5 @@
 
 - Control the music with all the usual controls such as play, pause, skip, previous, shuffle, repeat etc.
 
-<img width="1680" alt="artist" src="SpotifyClone.png">
+<img width="1680" alt="artist" src="Login.png">
+<img width="1680" alt="artist" src="App.png">
