@@ -21,6 +21,24 @@ $(window).scroll(function() {
 	hideOptionsMenu();
 });
 
+$(document).on("change", "select.playlist", function() {
+	var select = $(this);
+	var playlistId = select.val();
+    var songId = select.prev(".songId").val();
+    
+	$.post("includes/handlers/ajax/addToPlaylist.php", { playlistId: playlistId, songId: songId})
+	.done(function(error) {
+
+		if(error != "") {
+			alert(error);
+			return;
+		}
+
+		hideOptionsMenu();
+		select.val("");
+	});
+});
+
 function openPage(url){
 
     if(timer != null){
